@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIdigital - Fitness Marketing Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .animate-counter {
+            transition: all 0.1s ease-out;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        .hover-border:hover {
+            border-color: #3B82F6;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <nav class="sticky top-0 z-50 bg-white border-b-4 border-blue-500 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-black text-blue-500 tracking-tight">
+                        FI<span class="text-gray-700">digital</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <button onclick="scrollToCTA()" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 border-2 border-red-500 hover:border-red-600 transition-all duration-200 hover:scale-105 rounded-none">
+                        GET IN CONTACT
+                    </button>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 hover:bg-gray-100 rounded-md">
+                        <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden border-t-2 border-blue-500 bg-white py-4">
+                <button onclick="scrollToCTA()" class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 border-2 border-red-500 hover:border-red-600 transition-all duration-200 rounded-none">
+                    GET IN CONTACT
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-white py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <h1 class="text-5xl lg:text-7xl font-black text-gray-900 leading-tight mb-8">
+                    Your Dream Clients Are
+                    <span class="text-blue-500"> Scrolling Past You</span>
+                </h1>
+                <p class="text-xl lg:text-2xl font-light text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed">
+                    Let's fix that. We build conversion machines that turn your fitness expertise into consistent revenue.
+                </p>
+                <button onclick="scrollToCTA()" class="bg-red-500 hover:bg-red-600 text-white font-black text-xl py-6 px-12 border-4 border-red-500 hover:border-red-600 transition-all duration-200 hover:scale-105 shadow-2xl rounded-none">
+                    STOP LOSING MONEY ONLINE
+                </button>
+            </div>
+            
+            <div class="mt-20 flex justify-center">
+                <div class="w-32 h-2 bg-blue-500"></div>
+                <div class="w-8 h-8 bg-red-500 transform rotate-45 -mt-3 mx-4"></div>
+                <div class="w-32 h-2 bg-blue-500"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-black text-gray-900 mb-6">
+                    Sound <span class="text-red-500">Familiar?</span>
+                </h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="bg-white border-4 border-gray-700 p-8 hover-border transition-all duration-300 hover-scale cursor-pointer">
+                    <div class="text-6xl font-black text-red-500 mb-4">01</div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-4">Great IG, Zero Funnel</h3>
+                    <p class="text-gray-700 font-medium leading-relaxed">
+                        You post daily, get likes, but followers aren't becoming paying clients. Your content game is strong but your conversion system is broken.
+                    </p>
+                </div>
+                
+                <div class="bg-white border-4 border-gray-700 p-8 hover-border transition-all duration-300 hover-scale cursor-pointer">
+                    <div class="text-6xl font-black text-red-500 mb-4">02</div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-4">Manual Booking Nightmare</h3>
+                    <p class="text-gray-700 font-medium leading-relaxed">
+                        DMs, phone calls, back-and-forth scheduling. You're spending more time booking clients than training them.
+                    </p>
+                </div>
+                
+                <div class="bg-white border-4 border-gray-700 p-8 hover-border transition-all duration-300 hover-scale cursor-pointer">
+                    <div class="text-6xl font-black text-red-500 mb-4">03</div>
+                    <h3 class="text-2xl font-black text-gray-900 mb-4">Feast or Famine Revenue</h3>
+                    <p class="text-gray-700 font-medium leading-relaxed">
+                        Some months you're booked solid, others you're scrambling for clients. No predictable system means no predictable income.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-black text-gray-900 mb-6">
+                    Here's How We <span class="text-blue-500">Fix It</span>
+                </h2>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-start mb-12">
+                    <div class="bg-blue-500 text-white text-2xl font-black w-16 h-16 flex items-center justify-center mr-8 flex-shrink-0">
+                        1
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">Sales-Focused Website</h3>
+                        <p class="text-gray-700 font-medium text-lg leading-relaxed">
+                            Not just pretty—built to convert visitors into leads with strategic copy, clear CTAs, and conversion optimization.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mb-12">
+                    <div class="w-24 h-1 bg-gray-700"></div>
+                </div>
+                
+                <div class="flex items-start mb-12">
+                    <div class="bg-blue-500 text-white text-2xl font-black w-16 h-16 flex items-center justify-center mr-8 flex-shrink-0">
+                        2
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">Intelligent Booking System</h3>
+                        <p class="text-gray-700 font-medium text-lg leading-relaxed">
+                            Automated scheduling that captures leads, qualifies prospects, and books calls without you lifting a finger.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mb-12">
+                    <div class="w-24 h-1 bg-gray-700"></div>
+                </div>
+                
+                <div class="flex items-start mb-12">
+                    <div class="bg-blue-500 text-white text-2xl font-black w-16 h-16 flex items-center justify-center mr-8 flex-shrink-0">
+                        3
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">Branded Sales Pages That Sell</h3>
+                        <p class="text-gray-700 font-medium text-lg leading-relaxed">
+                            High-converting landing pages for each service that speak your prospect's language and drive action.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mb-12">
+                    <div class="w-24 h-1 bg-gray-700"></div>
+                </div>
+                
+                <div class="flex items-start mb-12">
+                    <div class="bg-blue-500 text-white text-2xl font-black w-16 h-16 flex items-center justify-center mr-8 flex-shrink-0">
+                        4
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">Email Funnels That Convert</h3>
+                        <p class="text-gray-700 font-medium text-lg leading-relaxed">
+                            Automated sequences that nurture leads, build trust, and turn prospects into paying clients while you sleep.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mb-12">
+                    <div class="w-24 h-1 bg-gray-700"></div>
+                </div>
+                
+                <div class="flex items-start mb-12">
+                    <div class="bg-blue-500 text-white text-2xl font-black w-16 h-16 flex items-center justify-center mr-8 flex-shrink-0">
+                        5
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-black text-gray-900 mb-3">VSL Script & Lead Magnet Setup</h3>
+                        <p class="text-gray-700 font-medium text-lg leading-relaxed">
+                            Professional video sales letters and irresistible lead magnets that capture attention and generate qualified leads.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="bg-blue-500 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-black text-white mb-6">
+                    Results That <span class="text-yellow-400">Speak</span>
+                </h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8 text-center">
+                <div class="bg-white border-4 border-white p-8">
+                    <div class="text-5xl lg:text-6xl font-black text-red-500 mb-4">
+                        <span id="counter1">2</span>x
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-2">Signups in 3 Weeks</h3>
+                    <p class="text-gray-700 font-medium">Average client increase after implementing our conversion system</p>
+                </div>
+                
+                <div class="bg-white border-4 border-white p-8">
+                    <div class="text-5xl lg:text-6xl font-black text-red-500 mb-4">
+                        <span id="counter2">85</span>%
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-2">Higher Conversion</h3>
+                    <p class="text-gray-700 font-medium">Our funnels convert visitors to leads at industry-leading rates</p>
+                </div>
+                
+                <div class="bg-white border-4 border-white p-8">
+                    <div class="text-5xl lg:text-6xl font-black text-red-500 mb-4">
+                        <span id="counter3">20</span>+
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-2">Funnels Built</h3>
+                    <p class="text-gray-700 font-medium">Proven systems deployed for fitness professionals nationwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-black text-gray-900 mb-6">
+                    How It <span class="text-blue-500">Works</span>
+                </h2>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="flex flex-col lg:flex-row items-center mb-16">
+                    <div class="bg-red-500 text-white text-6xl lg:text-8xl font-black w-32 h-32 lg:w-40 lg:h-40 flex items-center justify-center mb-8 lg:mb-0 lg:mx-12 flex-shrink-0">
+                        1
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">You Tell Us What You Offer</h3>
+                        <p class="text-xl text-gray-700 font-medium leading-relaxed">
+                            Share your services, target clients, and current challenges. We analyze your market position and identify conversion opportunities.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center mb-16">
+                    <div class="w-8 h-16 bg-blue-500 transform rotate-45"></div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row-reverse items-center mb-16">
+                    <div class="bg-red-500 text-white text-6xl lg:text-8xl font-black w-32 h-32 lg:w-40 lg:h-40 flex items-center justify-center mb-8 lg:mb-0 lg:mx-12 flex-shrink-0">
+                        2
+                    </div>
+                    <div class="text-center lg:text-right">
+                        <h3 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">We Build Your Conversion Engine</h3>
+                        <p class="text-xl text-gray-700 font-medium leading-relaxed">
+                            Our team creates your complete system: website, funnels, booking automation, and email sequences—all optimized for your specific market.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center mb-16">
+                    <div class="w-8 h-16 bg-blue-500 transform rotate-45"></div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row items-center mb-16">
+                    <div class="bg-red-500 text-white text-6xl lg:text-8xl font-black w-32 h-32 lg:w-40 lg:h-40 flex items-center justify-center mb-8 lg:mb-0 lg:mx-12 flex-shrink-0">
+                        3
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">You Only Pay If You Love It</h3>
+                        <p class="text-xl text-gray-700 font-medium leading-relaxed">
+                            We deliver results first. If you're not completely satisfied with your conversion system, you don't pay. Period.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="final-cta" class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div>
+                <h2 class="text-4xl lg:text-6xl font-black text-gray-900 mb-8">
+                    Ready to Stop Guessing and <span class="text-blue-500">Start Converting?</span>
+                </h2>
+                <p class="text-xl lg:text-2xl font-light text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed">
+                    Your expertise deserves a system that works as hard as you do.
+                </p>
+                
+                <div class="flex flex-col lg:flex-row gap-6 justify-center items-center">
+                    <button onclick="handleStrategyCall()" class="bg-blue-500 hover:bg-blue-800 text-white font-black text-xl py-6 px-10 border-4 border-blue-500 hover:border-blue-800 transition-all duration-200 hover:scale-105 shadow-xl rounded-none">
+                        BOOK A FREE STRATEGY CALL
+                    </button>
+                    <button onclick="handleDemoFunnel()" class="bg-white hover:bg-gray-100 text-gray-900 font-black text-xl py-6 px-10 border-4 border-gray-900 hover:border-gray-700 transition-all duration-200 hover:scale-105 shadow-xl rounded-none">
+                        GET YOUR FREE DEMO FUNNEL
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-20 flex justify-center">
+                <div class="w-20 h-20 bg-red-500 transform rotate-45"></div>
+                <div class="w-4 h-4 bg-blue-500 transform rotate-45 mt-8 mx-8"></div>
+                <div class="w-20 h-20 bg-blue-500 transform rotate-45"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-2xl font-black text-blue-500 mb-4">
+                FI<span class="text-white">digital</span>
+            </div>
+            <p class="text-gray-400">© 2024 FIdigital</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll to CTA
+        function scrollToCTA() {
+            document.getElementById('final-cta').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // CTA button handlers - Replace these with your actual links
+        function handleStrategyCall() {
+            // Replace with your actual booking link
+            window.open('https://calendly.com/your-booking-link', '_blank');
+        }
+
+        function handleDemoFunnel() {
+            // Replace with your actual demo funnel link  
+            window.open('mailto:demo@fidigital.com?subject=Free Demo Funnel Request', '_blank');
+        }
+
+        // Animated counters
+        function animateCounter(elementId, targetValue, suffix = '') {
+            const element = document.getElementById(elementId);
+            let currentValue = 0;
+            const increment = targetValue / 100;
+            
+            const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= targetValue) {
+                    currentValue = targetValue;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(currentValue);
+            }, 20);
+        }
+
+        // Intersection Observer for counters
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate counters when they come into view
+                    animateCounter('counter1', 2);
+                    animateCounter('counter2', 85);
+                    animateCounter('counter3', 20);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Start observing the proof section
+        const proofSection = document.querySelector('.bg-blue-500');
+        if (proofSection) {
+            observer.observe(proofSection);
+        }
+
+        // Smooth scrolling for all internal links
+        document.addEventListener('DOMContentLoaded', function() {
+            const style = document.createElement('style');
+            style.textContent = `
+                html {
+                    scroll-behavior: smooth;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
